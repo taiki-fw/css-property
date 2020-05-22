@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>font-size</title>
+    <style>
+      html {
+        font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+      }
+      body {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      main {
+        margin: 0 10px;
+      }
+      section {
+        border-bottom: 1px solid #535353;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+      code {
+        background-color: #c0c0c0;
+        padding: 2px 1.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="em" style="font-size: 16px;">
+        <h1 style="display: inline-block;">em</h1>
+        <label for="font-size-em">
+          ：親要素のフォントサイズ
+          <input
+            type="number"
+            id="font-size-em"
+            style="font-size: 1em;"
+            min="1"
+            max="50"
+            value="16"
+          />
+        </label>
+        <p>
+          親要素で用いられているフォントサイズと一致する
+        </p>
+        <p>
+          既定では 1em = 16px
+        </p>
+        <script>
+          const wrapperEl = document.querySelector(".em");
+          const fontSizeInput = document.querySelector("#font-size-em");
+          fontSizeInput.addEventListener("change", (e) => {
+            const fontSize = e.target.value;
+            wrapperEl.style.fontSize = fontSize + "px";
+          });
+        </script>
+      </section>
+      <section class="em" style="font-size: 16px;">
+        <h1>1rem</h1>
+        <p>
+          <code>rem</code
+          >値は親要素ではなく、ルート<code>html</code>要素に対して相対的です
+        </p>
+        <p>
+          既定では 1em = 16px
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
