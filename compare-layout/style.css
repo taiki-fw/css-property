@@ -1,0 +1,44 @@
+section > section {
+  margin-bottom: 2rem;
+}
+
+section > section + section {
+  border-top: 1px solid #000;
+}
+
+details {
+  margin-bottom: 1rem;
+}
+
+.chart {
+  border: 1px solid #000;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.flex-wrapper {
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+}
+
+.flex-wrapper > div {
+  /*
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 150px;
+  */
+  flex: 1 1 150px;
+  background-color: coral;
+  border: 1px solid red;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-wrapper > div {
+  background-color: coral;
+  border: 1px solid red;
+}
